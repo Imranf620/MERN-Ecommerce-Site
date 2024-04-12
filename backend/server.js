@@ -2,6 +2,8 @@ const app = require("./app")
 const dotenv = require("dotenv")
 const connectDatabase = require("./config/database")
 
+const port = process.env.PORT || 4000
+
 // handling uncaught Exception
 
 process.on("uncaughtException", (err)=>{
@@ -20,8 +22,8 @@ dotenv.config({path:"backend/config/config.env"})
 
 connectDatabase()
 
-const server = app.listen(8800, ()=>{
-    console.log(`server is running on http://localhost:8800`)
+const server = app.listen(port, ()=>{
+    console.log(`server is running on http://localhost:${port}`)
 })
 
 
