@@ -21,7 +21,7 @@ exports.isAutheniticatedUser = catchAsyncErrors(async (req,res,next)=>{
 exports.authorizedRoles = (...roles) =>{
     return (req, res, next) =>{
         if(!roles.includes(req.user.role)){
-            return next(new ErrorHandler(`Role: ${req.user.role} is not authorized`,401))
+            return next(new ErrorHandler(`Role: ${req.user.role} is not authorized`,403))
         }
 
         next()

@@ -12,12 +12,14 @@ const router = express.Router();
 
 router.route("/products").get(getAllProducts);
 
-router.route("/product/new").post(isAutheniticatedUser, authorizedRoles("admin") , createProduct);
+router
+  .route("/product/new")
+  .post(isAutheniticatedUser, authorizedRoles("admin"), createProduct);
 
 router
   .route("/product/:id")
-  .put(isAutheniticatedUser , authorizedRoles("admin") , updateProduct)
-  .delete(isAutheniticatedUser , authorizedRoles("admin")  , deleteProduct)
+  .put(isAutheniticatedUser, authorizedRoles("admin"), updateProduct)
+  .delete(isAutheniticatedUser, authorizedRoles("admin"), deleteProduct)
   .get(getProductDetails);
 
 module.exports = router;

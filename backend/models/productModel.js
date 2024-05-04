@@ -60,7 +60,7 @@ const productSchema = new mongoose.Schema({
         }
     }],
 
-    user:{
+    createdBy:{
         type:mongoose.Schema.ObjectId,
         ref: "User",
         required: true,

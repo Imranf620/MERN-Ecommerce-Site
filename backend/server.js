@@ -2,7 +2,7 @@ const app = require("./app")
 const dotenv = require("dotenv")
 const connectDatabase = require("./config/database")
 
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 8800
 
 // handling uncaught Exception
 
